@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res) {
-  
-});
+const usersCtrl = require('../controllers/users');
+
+router.get('/', usersCtrl.index);
+router.get('/:id', usersCtrl.show);
 
 module.exports = router;
