@@ -6,7 +6,10 @@ module.exports = {
 }
 
 function index(req, res) {
-  
+  res.render('users/index', {
+    title: 'Users',
+    user: req.user
+  });
 }
 
 function show(req, res) {
