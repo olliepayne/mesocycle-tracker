@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
 <h1>Add a Mesocycle</h1>
-<form action="/users/:id/mesocycles" method="POST">
+<form action="/users/<%= user._id %>/mesocycles" method="POST">
   <label>Attribute</label>
   <input type="text" name="attribute">
   <label>Length (Weeks)</label>

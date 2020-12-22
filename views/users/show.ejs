@@ -2,11 +2,7 @@
 
 <h1>You</h1>
 <section>
-  <% if(userModel.mesocycles.length > 0) { %>
-    <h3>userModel.mesocycles[userModel.mesocycles.length - 1].attribute</h3>
-  <% } else { %>
-    <h3>No Mesocycles...</h3>
-  <% } %>
+  <h3><%= userModel.mesocycles.length > 0 ? `${userModel.mesocycles[userModel.mesocycles.length - 1].attribute}` : 'No Mesocycles...' %></h3>
   <form action="/users/<%= user._id %>/mesocycles" method="GET">
     <button>View</button>
   </form>
@@ -15,7 +11,7 @@
   </form>
 </section>
 <section>
-  <h3><%= userModel.mesocycles.length > 0 ? 'Add a Mesocycle!' : 'Last Session' %></h3>
+  <h3><%= userModel.mesocycles.length > 0 ? 'Last Session' : 'No Sessions or Mesocycles' %></h3>
 </section>
 
 <%- include('../partials/footer.ejs') %>

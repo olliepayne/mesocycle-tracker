@@ -5,7 +5,6 @@ const mesocycleSchema = new Schema({
   attribute: String,
   length: Number,
   startDate: Date,
-  endDate: Date,
   sessions: [{type: Schema.Types.ObjectId, ref: 'Session'}]
 });
 
