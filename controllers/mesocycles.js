@@ -1,6 +1,10 @@
+const Mesocycle = require('../models/mesocycle');
+
 module.exports = {
   index,
-  new: newOne
+  new: newOne,
+  create,
+  show
 }
 
 function index(req, res) {
@@ -9,4 +13,12 @@ function index(req, res) {
 
 function newOne(req, res) {
   res.render('mesocycles/new', {title: 'New Mesocycle'});
+}
+
+function create(req, res) {
+  
+}
+
+function show(req, res) {
+  
 }
