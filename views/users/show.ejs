@@ -1,5 +1,16 @@
-<%- include('./partials/header.ejs') %>
+<%- include('../partials/header.ejs') %>
 
 <h1>You</h1>
+<section>
+  <% if(userModel.mesocycles.length > 0) { %>
+    <h3>userModel.mesocycles[userModel.mesocycles.length - 1].attribute</h3>
+  <% } else { %>
+    <h3>No Mesocycles...</h3>
+  <% } %>
+  <button href="/users/<%= user._id %>/mesocycles">View</button>
+  <form action="" method="DELETE">
+    <button>End</button>
+  </form>
+</section>
 
-<%- include('./partials/footer.ejs') %>
+<%- include('../partials/footer.ejs') %>
