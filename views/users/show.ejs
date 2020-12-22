@@ -7,7 +7,9 @@
   <% } else { %>
     <h3>No Mesocycles...</h3>
   <% } %>
-  <button href="/users/<%= user._id %>/mesocycles">View</button>
+  <form action="/users/<%= user._id %>/mesocycles" method="GET">
+    <button>View</button>
+  </form>
   <form action="" method="DELETE">
     <button>End</button>
   </form>

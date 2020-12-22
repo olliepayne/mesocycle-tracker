@@ -1,3 +1,4 @@
+const User = require('../models/user');
 const Mesocycle = require('../models/mesocycle');
 
 module.exports = {
@@ -8,11 +9,20 @@ module.exports = {
 }
 
 function index(req, res) {
-  res.render('mesocycles/index', {title: 'All Mesocycles', id: req.body.id});
+  User.findById(req.params.id, (err, result) => {
+    res.render('mesocycles/index', {
+      title: 'Your Mesocycles', 
+      user: req.user,
+      
+    });
+  });
 }
 
 function newOne(req, res) {
-  res.render('mesocycles/new', {title: 'New Mesocycle'});
+  res.render('mesocycles/new', {
+    title: 'New Mesocycle',
+    user: req.user
+  });
 }
 
 function create(req, res) {
