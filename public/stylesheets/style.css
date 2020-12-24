@@ -6,4 +6,12 @@ body {
 
 header {
   background-color: turquoise;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav > ul {
+  list-style-type: none;
 }
