@@ -13,7 +13,7 @@ function index(req, res) {
     res.render('mesocycles/index', {
       title: 'Your Mesocycles', 
       user: req.user,
-      // add
+      // pass mesocycle index for user
     });
   });
 }
