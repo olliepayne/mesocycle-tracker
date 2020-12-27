@@ -16,12 +16,9 @@ function index(req, res) {
   //     // pass mesocycle index for user
   //   });
   // });
-  User.findById(req.user.id, (err, result) => {
-    res.render('mesocycles/index', {
-      title: 'Your Mesocycles',
-      user: req.user,
-      userModel: result
-    });
+  res.render('mesocycles/index', {
+    title: 'Your Mesocycles',
+    user: req.user,
   });
 }
 
