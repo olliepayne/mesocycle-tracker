@@ -9,16 +9,15 @@ module.exports = {
 }
 
 function index(req, res) {
-  // User.findById(req.params.id, (err, result) => {
-  //   res.render('mesocycles/index', {
-  //     title: 'Your Mesocycles', 
-  //     user: req.user,
-  //     // pass mesocycle index for user
-  //   });
-  // });
+  const userMesocycles = [];
+  req.user.mesocycles.forEach((m_id) => {
+    userMesocycles.push(Mesocycle.findById(m_id));
+  });
+
   res.render('mesocycles/index', {
     title: 'Your Mesocycles',
     user: req.user,
+    mesocycles: userMesocycles
   });
 }
 
