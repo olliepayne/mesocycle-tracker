@@ -35,12 +35,10 @@ function newOne(req, res) {
 function create(req, res) {
   const newMesocycle = new Mesocycle(req.body);
   newMesocycle.save();
-  User.findById(req.params.id, (err, u) => {
-    u.mesocycles.push(m);
-    u.save();
-    
-    res.redirect('/');
-  });
+  req.user.mesocycles.push(newMesocycle);
+  req.user.save();
+
+  res.redirect('/users/:uid/mesocycles');
 }
 
 function show(req, res) {

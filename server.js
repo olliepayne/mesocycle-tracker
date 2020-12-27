@@ -45,8 +45,8 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/auth", authRouter);
-app.use('/users/:id/mesocycles', mesoyclesRouter);
-app.use('/users/:id/mesocyles/:id/sessions', sessionsRouter);
+app.use('/users/:uid/mesocycles', mesoyclesRouter);
+app.use('/users/:uid/mesocyles/:mid/sessions', sessionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

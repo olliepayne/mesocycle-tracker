@@ -3,10 +3,10 @@
 <h1>Add a Mesocycle</h1>
 <form action="/users/<%= user._id %>/mesocycles" method="POST">
   <label>Attribute</label>
-  <input type="text" name="attribute">
+  <input type="text" name="attribute" required>
   <label>Length (Weeks)</label>
-  <input type="number" name="length">
-  <input type="date" name="startDate">
+  <input type="number" name="length" required>
+  <input type="date" name="startDate" required>
   <button>Add</button>
 </form>
 
