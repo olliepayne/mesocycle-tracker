@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const mesocycleSchema = new Schema({
   attribute: String,
   length: Number,
-  startDate: Date,
+  startDate: String,
   sessions: [{type: Schema.Types.ObjectId, ref: 'Session'}]
 });
 

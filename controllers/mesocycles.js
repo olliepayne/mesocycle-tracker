@@ -1,6 +1,8 @@
 const User = require('../models/user');
 const Mesocycle = require('../models/mesocycle');
 
+const dateFunctionality = require('../public/javascripts/date-functionality');
+
 module.exports = {
   index,
   new: newOne,
@@ -28,7 +30,9 @@ function newOne(req, res) {
 
 function create(req, res) {
   const newMesocycle = new Mesocycle(req.body);
+  newMesocycle.startDate = dateFunctionality.shortDate(req.body.startDate);
   newMesocycle.save();
+
   req.user.mesocycles.push(newMesocycle);
   req.user.save();
 
