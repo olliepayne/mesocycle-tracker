@@ -1,4 +1,3 @@
-const User = require('../models/user');
 const Mesocycle = require('../models/mesocycle');
 
 module.exports = {
@@ -11,14 +10,13 @@ module.exports = {
 function index(req, res) {
   let userMesocycles = [];
   req.user.mesocycles.forEach((m_id) => {
-    // userMesocycles.push(Mesocycle.findById(m_id));
-    console.log(Mesocycle.findById(m_id).attribute);
-  });
+    userMesocycles.push(Mesocycle.findById(m_id));
 
-  res.render('mesocycles/index', {
-    title: 'Your Mesocycles',
-    user: req.user,
-    mesocycles: userMesocycles
+    res.render('mesocycles/index', {
+      title: 'Your Mesocycles',
+      user: req.user,
+      mesocycles: userMesocycles
+    });
   });
 }
 
