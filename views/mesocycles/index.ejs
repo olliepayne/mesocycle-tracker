@@ -2,5 +2,10 @@
 
 <h1>Your Mesocycles</h1>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><br>
+<% user.mesocycles.forEach((m) => { %>
+  <ul>
+    <li><%= m.attribute %></li>
+  </ul>
+<% }) %>
 
 <%- include('../partials/footer') %>
