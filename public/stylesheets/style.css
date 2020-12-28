@@ -3,3 +3,11 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+header {
+  background-color: peachpuff;
+}
+
+nav > ul {
+  list-style-type: none;
+}

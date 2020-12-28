@@ -7,6 +7,6 @@ const sessionCtrl = require('../controllers/sessions');
 router.get('/', sessionCtrl.index);
 router.get('/new', sessionCtrl.new);
 router.post('/', sessionCtrl.create);
-router.get('/:id', sessionCtrl.show);
+router.get('/:sid', sessionCtrl.show);
 
 module.exports = router;
