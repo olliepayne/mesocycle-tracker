@@ -9,14 +9,6 @@ module.exports = {
 }
 
 function index(req, res) {
-  // req.user
-  // .populate('mesocycles')
-  // .exec((err, mesocycle) => {
-  //   res.render('mesocycles/index', {
-  //     title: 'Your Mesocycles',
-  //     user: req.user
-  //   });
-  // });
   User.findById(req.user._id).
   populate('mesocycles'). 
   exec((err, user) => {
