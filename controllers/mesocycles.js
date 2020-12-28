@@ -9,9 +9,10 @@ module.exports = {
 }
 
 function index(req, res) {
-  const userMesocycles = [];
+  let userMesocycles = [];
   req.user.mesocycles.forEach((m_id) => {
-    userMesocycles.push(Mesocycle.findById(m_id));
+    // userMesocycles.push(Mesocycle.findById(m_id));
+    console.log(Mesocycle.findById(m_id).attribute);
   });
 
   res.render('mesocycles/index', {
