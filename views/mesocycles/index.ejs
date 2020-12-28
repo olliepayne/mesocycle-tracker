@@ -4,8 +4,9 @@
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><br>
 <% user.mesocycles.forEach((m) => { %>
   <h3>Mesocycle</h3>
-  <ul class="mesocyle-index">
+  <ul class="mesocycle-index">
     <li><%= m.attribute %></li>
+    <li><%= m.length %> Weeks Long</li>
   </ul>
 <% }) %>
 
