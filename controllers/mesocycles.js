@@ -28,6 +28,7 @@ function newOne(req, res) {
 
 function create(req, res) {
   const newMesocycle = new Mesocycle(req.body);
+  newMesocycle.active = true;
   newMesocycle.save();
 
   req.user.mesocycles.push(newMesocycle);
