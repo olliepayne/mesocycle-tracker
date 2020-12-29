@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>Your Mesocycles</h1>
+<a href="/users/<%= user._id %>">Back</a>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><br>
 <% for(let i = 0; i < user.mesocycles.length; i++) { %>
   <h3><%= i === 0 ? 'Current Mesocycle' : 'Mesocycle' %></h3>
