@@ -13,11 +13,12 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  User.findById(req.params.id, (err, result) => {
+  User.findById(req.user._id).
+  populate('mesocycles'). 
+  exec((err, user) => {
     res.render('users/show', {
       title: 'Test',
-      user: req.user,
-      userModel: result
+      user
     });
-  })
+  });
 }

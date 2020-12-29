@@ -1,8 +1,6 @@
 const User = require('../models/user');
 const Mesocycle = require('../models/mesocycle');
 
-const dateFunctionality = require('../public/javascripts/date-functionality');
-
 module.exports = {
   index,
   new: newOne,
@@ -39,5 +37,8 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  
+  // res.render('mesocycles/show', {
+  //   title: 'Details',
+  //   user: req.user
+  // });
 }
