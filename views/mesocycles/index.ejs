@@ -3,19 +3,17 @@
 <h1>Your Mesocycles</h1>
 <a href="/users/<%= user._id %>">Back</a>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><br>
-<% for(let i = 0; i < user.mesocycles.length; i++) { %>
-  <% if(i === 0) { %>
-    <h3>Current Mesocycle</h3>
-    <form action="/users/<%= user._id %>/mesocycles<%= user.mesocycles[i]._id %>" method="DELETE">
+<% for(let i = user.mesocycles.length - 1; i >= 0; i--) { %>
+  <h3><%= i === user.mesocycles.length - 1 ? 'Current Mesocycle' : 'Mesocycle'%></h3>
+  <ul class="mesocycle-index">
+    <li><%= user.mesocycles[i].attribute %></li>
+    <li><%= user.mesocycles[i].length %> Weeks Long</li>
+  </ul>
+  <% if(i === user.mesocycles.length - 1) { %>
+    <form action="/users/<%= user._id %>/mesocycles" method="DELETE">
       <button>End</button>
     </form>
-  <% } else { %>
-    <h3>Mesocycle</h3>
-  <% }%>
-  <ul class="mesocycle-index">
-      <li><%= user.mesocycles[i].attribute %></li>
-      <li><%= user.mesocycles[i].length %> Weeks Long</li>
-    </ul>
+  <% } %>
 <% } %>
 
 <%- include('../partials/footer') %>

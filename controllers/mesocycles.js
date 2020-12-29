@@ -37,5 +37,10 @@ function create(req, res) {
 }
 
 function end(req, res) {
-  
+  const deleteThis = req.user.mesocycles[req.user.mesocycles.length - 1];
+  req.user.mesocycles.pop();
+
+  Mesocycle.deleteOne(deleteThis._id, (err) => {
+    console.log('test');
+  });
 }
