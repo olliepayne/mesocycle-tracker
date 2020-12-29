@@ -4,12 +4,13 @@
 <a href="/users/<%= user._id %>">Back</a>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><hr>
 <% for(let i = user.mesocycles.length - 1; i >= 0; i--) { %>
-  <h3><%= i === user.mesocycles.length - 1 ? 'Current Mesocycle' : 'Mesocycle'%></h3>
+  <h3><%= i === user.mesocycles.length - 1 && user.mesocycles[i].active ? 'Current Mesocycle' : 'Mesocycle'%></h3>
+  <a href="/users/<%= user._id %>/mesocycles/<%= user.mesocycles[i]._id %>">Details</a>
   <ul class="mesocycle-index">
     <li><%= user.mesocycles[i].attribute %></li>
     <li><%= user.mesocycles[i].length %> Weeks Long</li>
   </ul>
-  <% if(i === user.mesocycles.length - 1) { %>
+  <% if(i === user.mesocycles.length - 1 && user.mesocycles[i].active) { %>
     <form action="/users/<%= user._id %>/mesocycles" method="DELETE">
       <button>End</button>
     </form>

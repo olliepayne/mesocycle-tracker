@@ -2,7 +2,9 @@
 
 <h1>You</h1>
 <section>
-  <h3><%= user.mesocycles.length > 0 ? `Currently Training: ${user.mesocycles[user.mesocycles.length - 1].attribute}` : 'No Mesocycles...' %></h3>
+  <% if(user.mesocycles.length > 0 && user.mesocycles[user.mesocycles.length - 1].active) { %>
+    <h3><%= user.mesocycles[user.mesocycles.length - 1].active ? `Currently Training: ${user.mesocycles[user.mesocycles.length - 1].attribute}` : 'Add'%></h3>
+  <% } %>
   <form action="/users/<%= user._id %>/mesocycles" method="GET">
     <button>View</button>
   </form>

@@ -5,7 +5,7 @@ module.exports = {
   index,
   new: newOne,
   create,
-  end
+  show
 }
 
 function index(req, res) {
@@ -36,11 +36,9 @@ function create(req, res) {
   res.redirect('/users/:uid/mesocycles');
 }
 
-function end(req, res) {
-  const deleteThis = req.user.mesocycles[req.user.mesocycles.length - 1];
-  req.user.mesocycles.pop();
-
-  Mesocycle.deleteOne(deleteThis._id, (err) => {
-    console.log('test');
+function show(req, res) {
+  res.render('mesocycles/show', {
+    title: 'Details',
+    user: req.user
   });
 }
