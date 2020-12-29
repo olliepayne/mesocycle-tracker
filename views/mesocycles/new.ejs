@@ -1,6 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
 <h1>Add a Mesocycle</h1>
+<a href="/users/<%= user._id %>/mesocycles">Back</a><hr>
 <form action="/users/<%= user._id %>/mesocycles" method="POST">
   <label>Attribute</label>
   <input type="text" name="attribute" required>

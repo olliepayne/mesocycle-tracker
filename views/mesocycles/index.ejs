@@ -2,7 +2,7 @@
 
 <h1>Your Mesocycles</h1>
 <a href="/users/<%= user._id %>">Back</a>
-<a href="/users/<%= user._id %>/mesocycles/new">Add</a><br>
+<a href="/users/<%= user._id %>/mesocycles/new">Add</a><hr>
 <% for(let i = user.mesocycles.length - 1; i >= 0; i--) { %>
   <h3><%= i === user.mesocycles.length - 1 ? 'Current Mesocycle' : 'Mesocycle'%></h3>
   <ul class="mesocycle-index">
