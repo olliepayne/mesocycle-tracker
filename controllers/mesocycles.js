@@ -5,7 +5,7 @@ module.exports = {
   index,
   new: newOne,
   create,
-  show
+  end
 }
 
 function index(req, res) {
@@ -36,9 +36,6 @@ function create(req, res) {
   res.redirect('/users/:uid/mesocycles');
 }
 
-function show(req, res) {
-  // res.render('mesocycles/show', {
-  //   title: 'Details',
-  //   user: req.user
-  // });
+function end(req, res) {
+  
 }
