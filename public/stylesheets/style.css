@@ -5,10 +5,22 @@ body {
 }
 
 header {
-  background-color: peachpuff;
-  width: 100%;
+  background-color: #e6635a;
+  color: white;
 }
 
 nav > ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  padding: 0px 5px;
+}
+
+.nav-link:hover {
+  color: gray;
 }
