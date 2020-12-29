@@ -2,12 +2,12 @@
 
 <h1>Your Mesocycles</h1>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><br>
-<% user.mesocycles.forEach((m) => { %>
-  <h3>Mesocycle</h3>
+<% for(let i = 0; i < user.mesocycles.length; i++) { %>
+  <h3><%= i === 0 ? 'Current Mesocycle' : 'Mesocycle' %></h3>
   <ul class="mesocycle-index">
-    <li><%= m.attribute %></li>
-    <li><%= m.length %> Weeks Long</li>
-  </ul>
-<% }) %>
+      <li><%= user.mesocycles[i].attribute %></li>
+      <li><%= user.mesocycles[i].length %> Weeks Long</li>
+    </ul>
+<% } %>
 
 <%- include('../partials/footer') %>
