@@ -41,10 +41,11 @@ function show(req, res) {
   Mesocycle.findById(req.params.mid).
   populate('sessions'). 
   exec((err, mesocycle) => {
-    res.render('mesocycles/show', {
-      title: 'Details',
-      user: req.user,
-      mesocycle
-    });
+    // res.render('mesocycles/show', {
+    //   title: 'Details',
+    //   user: req.user,
+    //   mesocycle
+    // });
+    console.log(mesocycle);
   });
 }
