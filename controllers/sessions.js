@@ -10,7 +10,10 @@ function index(req, res) {
 }
 
 function newOne(req, res) {
-  
+  res.render('sessions/new', {
+    title: 'Add Session',
+    user: req.user
+  });
 }
 
 function create(req, res) {
