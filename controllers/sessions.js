@@ -8,7 +8,11 @@ module.exports = {
 }
 
 function index(req, res) {
-  
+  console.log(req.params.mid);
+  res.render('sessions/index', {
+    title: 'Sessions',
+    user: req.user
+  });
 }
 
 function newOne(req, res) {
