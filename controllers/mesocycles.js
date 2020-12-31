@@ -38,8 +38,11 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  res.render('mesocycles/show', {
-    title: 'Details',
-    user: req.user
+  Mesocycle.findById(req.params.mid, (err, result) => {
+    res.render('mesocycles/show', {
+      title: 'Details',
+      user: req.user,
+      mesocycle: result
+    });
   });
 }
