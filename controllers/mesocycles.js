@@ -38,5 +38,11 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  
+  Mesocycle.findById(req.params.mid, (err, result) => {
+    res.render('mesocycles/show', {
+      title: 'Details',
+      user: req.user,
+      mesocycle: result
+    });
+  });
 }

@@ -1,11 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1>Show</h1>
+<h1>Mesocycle <%= mesocycle._id %></h1>
 <a href="/users/<%= user._id %>/mesocycles">Back</a><hr>
-<h3>Mesocycle: <%= mesocycle.startDate %></h3>
-<label>Sessions</label>
-<form action="/users/<%= user._id %>/mesocycles/<%= mesocycle._id %>">
-  <button>Add</button>
-</form>
 
 <%- include('../partials/footer') %>

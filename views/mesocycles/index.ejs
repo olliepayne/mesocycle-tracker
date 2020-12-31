@@ -4,13 +4,22 @@
 <a href="/users/<%= user._id %>">Back</a>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><hr>
 <% for(let i = user.mesocycles.length - 1; i >= 0; i--) { %>
+  <% let isCurrentCycle = false %>
+  <% if(i === user.mesocycles.length - 1 && user.mesocycles[i].active) { %>
+    <% isCurrentCycle = true; %>
+  <% } %>
   <h3><%= i === user.mesocycles.length - 1 && user.mesocycles[i].active ? 'Current Mesocycle' : `Mesocyle: ${user.mesocycles[i].startDate}` %></h3>
+  <% if(isCurrentCycle) { %>
+    <form>
+      <button>End</button>
+    </form>
+  <% } %>
   <a href="/users/<%= user._id %>/mesocycles/<%= user.mesocycles[i]._id %>">Details</a>
   <ul class="mesocycle-index">
     <li>Training: <%= user.mesocycles[i].attribute %></li>
     <li>Length: <%= user.mesocycles[i].length %> Weeks</li>
   </ul>
-  <% if(i === user.mesocycles.length - 1 && user.mesocycles[i].active) { %>
+  <% if(isCurrentCycle) { %>
     <hr>
   <% } %>
 <% } %>
