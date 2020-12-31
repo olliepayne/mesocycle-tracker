@@ -8,15 +8,7 @@ module.exports = {
 }
 
 function index(req, res) {
-  // Mesocycle.findById(req.params.mid). 
-  // populate('sessions'). 
-  // exec((err, mesocycle) => {
-  //   res.render('sessions/index', {
-  //     title: '',
-  //     user: req.user,
-  //     mesocycle
-  //   });
-  // });
+  
 }
 
 function newOne(req, res) {

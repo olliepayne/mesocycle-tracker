@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
+html {
   font-family: 'Roboto', sans-serif;
 }
 
 header {
   background-color: lightcoral;
   color: white;
+}
+
+body {
+  margin: 0;
 }
 
 nav > h2 {
@@ -23,7 +27,7 @@ nav > ul {
 }
 
 .nav-link {
-  padding: 0px 5px 3px 0;
+  padding: 0px 5px 5px 0;
 }
 
 .nav-link:hover {
