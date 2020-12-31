@@ -8,7 +8,6 @@ module.exports = {
 }
 
 function index(req, res) {
-  console.log(req.params.mid);
   // Mesocycle.findById(req.params.mid). 
   // populate('sessions'). 
   // exec((err, mesocycle) => {
