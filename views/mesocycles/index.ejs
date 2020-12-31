@@ -11,12 +11,7 @@
     <li>Length: <%= user.mesocycles[i].length %> Weeks</li>
   </ul>
   <% if(i === user.mesocycles.length - 1 && user.mesocycles[i].active) { %>
-    <form action="/users/<%= user._id %>/mesocycles/<%= user.mesocycles[i]._id %>/sessions/new" method="GET">
-      <button>Add Session</button>
-    </form>
-    <form action="/users/<%= user._id %>/mesocycles" method="DELETE">
-      <button>End</button>
-    </form>
+    <hr>
   <% } %>
 <% } %>
 

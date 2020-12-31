@@ -1,3 +1,5 @@
+const Mesocycle = require('../models/mesocycle');
+
 module.exports = {
   index,
   new: newOne,
@@ -6,7 +8,7 @@ module.exports = {
 }
 
 function index(req, res) {
-
+  
 }
 
 function newOne(req, res) {
