@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-<h1>You</h1>
+<h1>You (<%= user.name %>)</h1>
 <section>
   <% if(user.mesocycles.length > 0 && user.mesocycles[user.mesocycles.length - 1].active) { %>
     <h3><%= user.mesocycles[user.mesocycles.length - 1].active ? `Currently Training: ${user.mesocycles[user.mesocycles.length - 1].attribute}` : 'Add'%></h3>
