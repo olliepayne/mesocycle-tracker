@@ -4,7 +4,7 @@
 <a href="/users/<%= user._id %>">Back</a>
 <a href="/users/<%= user._id %>/mesocycles/new">Add</a><hr>
 <% for(let i = user.mesocycles.length - 1; i >= 0; i--) { %>
-  <h3><%= i === user.mesocycles.length - 1 && user.mesocycles[i].active ? 'Current Mesocycle' : 'Mesocycle'%></h3>
+  <h3><%= i === user.mesocycles.length - 1 && user.mesocycles[i].active ? 'Current Mesocycle' : `Mesocyle: ${user.mesocycles[i].startDate}` %></h3>
   <a href="/users/<%= user._id %>/mesocycles/<%= user.mesocycles[i]._id %>">Details</a>
   <ul class="mesocycle-index">
     <li><%= user.mesocycles[i].attribute %></li>
