@@ -17,7 +17,7 @@
   <% } else { %>
     <h3>Mesocyle: <%= mesocycle.attribute %></h3>
   <% } %>
-  <h4>Started <%= mesocycle.startDate %>, <%= mesocycle.length %> weeks long</h4>
+  <h4>Start Date: <%= mesocycle.startDate %>, <%= mesocycle.length %> weeks long</h4>
   <a href="/users/<%= user._id %>/mesocycles/<%= mesocycle._id %>">Details</a>
   <% if(isCurrentCycle) { %>
     <hr>

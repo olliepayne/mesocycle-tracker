@@ -9,6 +9,7 @@ module.exports = {
 }
 
 function index(req, res) {
+  console.log(req.params.mid);
   User.findById(req.user._id).
   populate('mesocycles'). 
   exec((err, user) => {
