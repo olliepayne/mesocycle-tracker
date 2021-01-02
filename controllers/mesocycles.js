@@ -49,9 +49,9 @@ function deleteOne(req, res) {
     User.findById(req.user._id, (err, user) => {
       const deletedMesoIndex = user.mesocycles.indexOf(deletedMeso);
       user.mesocycles.splice(deletedMesoIndex, 1);
-    });
 
-    res.redirect('/mesocycles');
+      res.redirect('/mesocycles');
+    });
   });
 
   // Mesocycle.findByIdAndDelete(req.params.id, (err) => {
