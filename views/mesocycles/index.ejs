@@ -1,5 +1,11 @@
 <%- include('../partials/header') %>
 
 <h1>Your Mesocycles</h1>
+<% mesocycles.forEach((m) => { %>
+  <label>---</label>
+  <ul>
+    <li><%= m.attribute %></li>
+  </ul>
+<% }) %>
 
 <%- include('../partials/footer') %>

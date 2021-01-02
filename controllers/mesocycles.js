@@ -1,11 +1,11 @@
-const User = require('../models/user');
 const Mesocycle = require('../models/mesocycle');
 
 module.exports = {
   index,
   new: newOne,
   create,
-  show
+  show,
+  delete: deleteOne
 }
 
 function index(req, res) {
@@ -13,19 +13,28 @@ function index(req, res) {
     res.render('mesocycles/index', {
       title: 'Mesocycles',
       user: req.user,
-      mesoycles: results
+      mesocycles: results
     })
   });
 }
 
 function newOne(req, res) {
-  
+  res.render('mesocycles/new', {
+    title: 'New',
+    user: req.user
+  });
 }
 
 function create(req, res) {
-  
+  Mesocycle.create(req.body, (err, newResult) => {
+    res.redirect('/mesocycles');
+  });
 }
 
 function show(req, res) {
   
+}
+
+function deleteOne(req, res) {
+
 }
