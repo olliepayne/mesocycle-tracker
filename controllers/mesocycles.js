@@ -33,10 +33,10 @@ function create(req, res) {
   Mesocycle.create(req.body, (err, newMesocycle) => {
     User.findById(req.user._id, (err, user) => {
       user.mesocycles.push(newMesocycle);
-      user.save();
-    })
-
-    res.redirect('/mesocycles');
+      user.save((err) => {
+        res.redirect('/mesocycles');
+      });
+    });
   });
 }
 
