@@ -5,7 +5,8 @@ module.exports = {
   new: newOne,
   create,
   show,
-  delete: deleteOne
+  delete: deleteOne,
+  update
 }
 
 function index(req, res) {
@@ -36,5 +37,11 @@ function show(req, res) {
 }
 
 function deleteOne(req, res) {
+  Mesocycle.findByIdAndDelete(req.params.id, (err) => {
+    res.redirect('/mesocycles');
+  });
+}
+
+function update(req, res) {
 
 }

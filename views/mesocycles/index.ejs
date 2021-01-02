@@ -2,10 +2,13 @@
 
 <h1>Your Mesocycles</h1>
 <% mesocycles.forEach((m) => { %>
-  <label>---</label>
+  <label></label>
   <ul>
     <li><%= m.attribute %></li>
   </ul>
+  <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
+    <button>X</button>
+  </form>
 <% }) %>
 
 <%- include('../partials/footer') %>
