@@ -9,41 +9,23 @@ module.exports = {
 }
 
 function index(req, res) {
-  console.log(req.params.mid);
-  User.findById(req.user._id).
-  populate('mesocycles'). 
-  exec((err, user) => {
+  Mesocycle.find({}, (err, results) => {
     res.render('mesocycles/index', {
-      title: 'Your Mesocycles',
-      user
-    });
+      title: 'Mesocycles',
+      user: req.user,
+      mesoycles: results
+    })
   });
 }
 
 function newOne(req, res) {
-  res.render('mesocycles/new', {
-    title: 'New Mesocycle',
-    user: req.user
-  });
+  
 }
 
 function create(req, res) {
-  const newMesocycle = new Mesocycle(req.body);
-  newMesocycle.active = true;
-  newMesocycle.save();
-
-  req.user.mesocycles.push(newMesocycle);
-  req.user.save();
-
-  res.redirect('/users/:uid/mesocycles');
+  
 }
 
 function show(req, res) {
-  Mesocycle.findById(req.params.mid, (err, result) => {
-    res.render('mesocycles/show', {
-      title: 'Details',
-      user: req.user,
-      mesocycle: result
-    });
-  });
+  
 }

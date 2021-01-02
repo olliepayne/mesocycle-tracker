@@ -1,27 +1,5 @@
 <%- include('../partials/header') %>
 
 <h1>Your Mesocycles</h1>
-<a href="/users/<%= user._id %>">Back</a>
-<a href="/users/<%= user._id %>/mesocycles/new">Add</a><hr>
-<% for(let i = user.mesocycles.length - 1; i >= 0; i--) { %>
-  <% const mesocycle = user.mesocycles[i] %>
-  <% let isCurrentCycle = false %>
-  <% if(i === user.mesocycles.length - 1 && mesocycle.active) { %>
-    <% isCurrentCycle = true; %>
-  <% } %>
-  <% if(isCurrentCycle) { %>
-    <h2>Current Mesocycle: <%= mesocycle.attribute %></h2>
-    <form>
-      <button>End</button>
-    </form>
-  <% } else { %>
-    <h3>Mesocyle: <%= mesocycle.attribute %></h3>
-  <% } %>
-  <h4>Start Date: <%= mesocycle.startDate %>, <%= mesocycle.length %> weeks long</h4>
-  <a href="/users/<%= user._id %>/mesocycles/<%= mesocycle._id %>">Details</a>
-  <% if(isCurrentCycle) { %>
-    <hr>
-  <% } %>
-<% } %>
 
 <%- include('../partials/footer') %>

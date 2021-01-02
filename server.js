@@ -12,7 +12,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var mesocyclesRouter = require('./routes/mesocycles');
-var sessionsRouter = require('./routes/sessions');
 
 var app = express();
 
@@ -48,8 +47,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/auth", authRouter);
-app.use('/users/:uid/mesocycles', mesocyclesRouter);
-app.use('/users/:uid/mesocycles/:mid/sessions', sessionsRouter);
+app.use('/mesocycles', mesocyclesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
