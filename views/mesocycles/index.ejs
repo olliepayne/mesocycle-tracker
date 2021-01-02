@@ -1,19 +1,20 @@
 <%- include('../partials/header') %>
 
 <h1>Your Mesocycles</h1>
-<% mesocycles.forEach((m) => { %>
-  <label><%= m.attribute %>, started on <%= m.startDate %></label>
+<% for(let i = mesocycles.length - 1; i >= 0; i--) { %>
+  <% const m = mesocycles[i] %>
+  <label><%= i === mesocycles.length - 1 ? `Current Mesocycle: ${m.attribute}` : `Mesocycle: ${m.attribute}` %></label>
   <form action="mesocycles/<%= m._id %>?_method=PUT" method="POST">
     <label>Attribute</label>
-    <input type="text" name="attribute" required>
+    <input type="text" name="attribute">
     <label>Length (Weeks)</label>
-    <input type="number" name="length" required>
-    <input type="date" name="startDate" required>
+    <input type="number" name="length">
+    <input type="date" name="startDate">
     <button>Update</button>
   </form><br>
   <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
     <button>X</button>
   </form><hr>
-<% }) %>
+<% } %>
 
 <%- include('../partials/footer') %>
