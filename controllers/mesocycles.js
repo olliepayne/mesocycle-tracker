@@ -20,13 +20,6 @@ function index(req, res) {
       mesocycles: user.mesocycles
     })
   });
-  // Mesocycle.find({}, (err, results) => {
-  //   res.render('mesocycles/index', {
-  //     title: 'Mesocycles',
-  //     user: req.user,
-  //     mesocycles: results
-  //   })
-  // });
 }
 
 function newOne(req, res) {
@@ -52,9 +45,18 @@ function show(req, res) {
 }
 
 function deleteOne(req, res) {
-  Mesocycle.findByIdAndDelete(req.params.id, (err) => {
+  Mesocycle.findByIdAndDelete(req.params.id, (err, deletedMeso) => {
+    User.findById(req.user._id, (err, user) => {
+      const deletedMesoIndex = user.mesocycles.indexOf(deletedMeso);
+      user.mesocycles.splice(deletedMesoIndex, 1);
+    });
+
     res.redirect('/mesocycles');
   });
+
+  // Mesocycle.findByIdAndDelete(req.params.id, (err) => {
+  //   res.redirect('/mesocycles');
+  // });
 }
 
 function update(req, res) {
