@@ -2,13 +2,18 @@
 
 <h1>Your Mesocycles</h1>
 <% mesocycles.forEach((m) => { %>
-  <label></label>
-  <ul>
-    <li><%= m.attribute %></li>
-  </ul>
+  <label><%= m.attribute %>, started on <%= m.startDate %></label>
+  <form action="mesocycles/<%= m._id %>?_method=PUT" method="POST">
+    <label>Attribute</label>
+    <input type="text" name="attribute" required>
+    <label>Length (Weeks)</label>
+    <input type="number" name="length" required>
+    <input type="date" name="startDate" required>
+    <button>Update</button>
+  </form><br>
   <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
     <button>X</button>
-  </form>
+  </form><hr>
 <% }) %>
 
 <%- include('../partials/footer') %>

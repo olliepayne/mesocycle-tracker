@@ -1,13 +1,5 @@
 <%- include('../partials/header') %>
 
 <h1>Mesocycle <%= mesocycle._id %></h1>
-<a href="/users/<%= user._id %>/mesocycles">Back</a><hr>
-<h2>Training: <%= mesocycle.attribute %>, started <%= mesocycle.startDate %></h2>
-<ul style="list-style-type: none;">
-  <li>Length: <%= mesocycle.length %> Weeks<%= mesocycle.active ? ', ACTIVE' : '' %></li>
-</ul>
-<hr>
-<a href="/users/<%= user._id %>/mesocycles/<%= mesocycle._id %>/sessions">View Sessions</a>
-<h3>Last Session</h3>
 
 <%- include('../partials/footer') %>

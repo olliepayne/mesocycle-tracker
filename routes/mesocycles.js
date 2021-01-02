@@ -8,5 +8,6 @@ router.get('/new', mesocycleCtrl.new);
 router.post('/', mesocycleCtrl.create);
 router.get('/:id', mesocycleCtrl.show);
 router.delete('/:id', mesocycleCtrl.delete);
+router.put('/:id', mesocycleCtrl.update);
 
 module.exports = router;

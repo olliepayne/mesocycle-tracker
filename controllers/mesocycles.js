@@ -43,5 +43,8 @@ function deleteOne(req, res) {
 }
 
 function update(req, res) {
-
+  Mesocycle.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(() => {
+    res.redirect('/mesocycles');
+  });
 }
