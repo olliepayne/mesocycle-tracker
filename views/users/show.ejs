@@ -4,7 +4,17 @@
 <h1><%= user.name %></h1>
 <h3>Bio</h3>
 <p><%= user.bio %></p>
+<% if(canEdit) { %>
+  <form>
+    <button>Edit</button>
+  </form>
+<% } %>
 <h3>Contact</h3>
 <p><%= user.email %></p>
+<% if(canEdit) { %>
+  <form>
+    <button>Edit</button>
+  </form>
+<% } %>
 
 <%- include('../partials/footer.ejs') %>
