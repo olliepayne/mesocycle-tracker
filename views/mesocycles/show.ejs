@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>Mesocycle <%= mesocycle._id %></h1>
+<a href="/mesocycles">Back</a><hr>
+<h3><%= currentMesocycle ? `Current Mesocycle: ${mesocycle.attribute}` : `Mesocycle: ${mesocycle.attribute}` %></label>
 
 <%- include('../partials/footer') %>

@@ -41,7 +41,21 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  
+  User.findById(req.user._id, (err, user) => {
+    Mesocycle.findById(req.params.id, (err, mesocycle) => {
+      const currentMesocycle = false;
+      if(user.mesocycles.indexOf(mesocycle) === user.mesocycles.length - 1) {
+        currentMesocycle = true;
+      }
+
+      res.render('mesocycles/show', {
+        title: `Mesocycle ${mesocycle._id}`,
+        user: req.user,
+        mesocycle,
+        currentMesocycle
+      });
+    });
+  })
 }
 
 function deleteOne(req, res) {
@@ -53,10 +67,6 @@ function deleteOne(req, res) {
       res.redirect('/mesocycles');
     });
   });
-
-  // Mesocycle.findByIdAndDelete(req.params.id, (err) => {
-  //   res.redirect('/mesocycles');
-  // });
 }
 
 function update(req, res) {
