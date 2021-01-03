@@ -30,7 +30,7 @@ function newOne(req, res) {
 }
 
 function create(req, res) {
-  Mesocycle.create(req.body, (err, newMesocycle) => {
+  Mesocycle.create(req.body, (err, newMesocycle) => { 
     User.findById(req.user._id, (err, user) => {
       user.mesocycles.push(newMesocycle);
       user.save((err) => {
@@ -64,6 +64,10 @@ function deleteOne(req, res) {
 }
 
 function update(req, res) {
+  Mesocycle.findById(req.params.id, (err, mesocycle) => {
+    
+  });
+
   Mesocycle.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(() => {
     res.redirect('/mesocycles');
