@@ -17,7 +17,7 @@ function show(req, res) {
   populate('mesocycles'). 
   exec((err, user) => {
     res.render('users/show', {
-      title: 'Test',
+      title: `User ${user._id}`,
       user
     });
   });

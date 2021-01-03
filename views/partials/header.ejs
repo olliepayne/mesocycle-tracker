@@ -13,6 +13,7 @@
       <ul>
         <% if(user) { %>
           <li class="nav-link"><a href="/">Home</a></li>
+          <li class="nav-link"><a href="/users/<%= user._id %>">You</a></li>
           <li class="nav-link"><a href="/auth/logout">Logout</a></li>
         <% } else { %>
           <li class="nav-link"><a href="/">Home</a></li>

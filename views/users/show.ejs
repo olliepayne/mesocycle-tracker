@@ -1,5 +1,10 @@
 <%- include('../partials/header.ejs') %>
 
-<h1>You (<%= user.name %>)</h1>
+<img src="<%= user.avatar %>">
+<h1><%= user.name %></h1>
+<h3>Bio</h3>
+<p><%= user.bio %></p>
+<h3>Contact</h3>
+<p><%= user.email %></p>
 
 <%- include('../partials/footer.ejs') %>
