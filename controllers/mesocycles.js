@@ -43,10 +43,11 @@ function create(req, res) {
 function show(req, res) {
   User.findById(req.user._id, (err, user) => {
     Mesocycle.findById(req.params.id, (err, mesocycle) => {
-      const currentMesocycle = false;
-      if(user.mesocycles.indexOf(mesocycle) === user.mesocycles.length - 1) {
-        currentMesocycle = true;
-      }
+      // !
+      // const currentMesocycle = false;
+      // if(user.mesocycles.indexOf(mesocycle) === user.mesocycles.length - 1) {
+      //   currentMesocycle = true;
+      // }
 
       res.render('mesocycles/show', {
         title: `Mesocycle ${mesocycle._id}`,
