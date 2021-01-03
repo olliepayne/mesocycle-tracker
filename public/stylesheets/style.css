@@ -3,3 +3,17 @@
 html {
   font-family: 'Roboto', sans-serif;
 }
+
+nav {
+  
+}
+
+nav > ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  padding: 0 5px;
+}

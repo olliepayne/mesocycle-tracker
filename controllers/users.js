@@ -19,7 +19,6 @@ function show(req, res) {
     let canEdit = false;
     if(req.params.id == req.user._id) {
       canEdit = true;
-      console.log(canEdit);
     }
 
     res.render('users/show', {
