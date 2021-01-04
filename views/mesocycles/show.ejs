@@ -8,7 +8,7 @@
   <li><%= mesocycle.length %> Weeks</li>
 </ul><hr>
 <h3>Update</h3>
-<form action="mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
+<form action="/mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
   <label>Attribute</label>
   <input type="text" name="attribute" value="<%= mesocycle.attribute %>">
   <label>Length (Weeks)</label>
