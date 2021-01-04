@@ -2,7 +2,8 @@ const User = require('../models/user');
 
 module.exports = {
   index,
-  show
+  show,
+  update
 }
 
 function index(req, res) {
@@ -27,4 +28,8 @@ function show(req, res) {
       canEdit
     });
   });
+}
+
+function update(req, res) {
+
 }

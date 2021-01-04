@@ -5,6 +5,7 @@ const usersCtrl = require('../controllers/users');
 
 router.get('/', isLoggedIn, usersCtrl.index);
 router.get('/:id', isLoggedIn, usersCtrl.show);
+router.get('/:id', isLoggedIn, usersCtrl.update);
 
 // Insert this middleware for routes that require a logged in user
 function isLoggedIn(req, res, next) {
