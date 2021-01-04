@@ -4,7 +4,15 @@
 Click Here to Open: https://intense-anchorage-67623.herokuapp.com/
 
 ### Screenshots
-(https://i.imgur.com/5RFcKrH.png)
+<img src="https://i.imgur.com/5RFcKrH.png"
+     alt="Screnshot"
+     style="" />
+<img src="https://i.imgur.com/KoLJWAq.png"
+     alt="Screnshot"
+     style="" />
+<img src="https://i.imgur.com/AFeyo2F.png"
+     alt="Screnshot"
+     style="" />
 
 ### Technologies Used
 - Node
@@ -12,5 +20,6 @@ Click Here to Open: https://intense-anchorage-67623.herokuapp.com/
 - HTML
 - CSS
 
-#### Next Steps
+#### Next Steps // Challenges
 In the future I intend to completely stlye the app. The functionality ultimately meets what I wanted.
+This app was an absolute nightmare, I learned to never lack humility and kick my work ethic up a notch.
