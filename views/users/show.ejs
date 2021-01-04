@@ -1,16 +1,44 @@
 <%- include('../partials/header.ejs') %>
+<script>
+  const editAvatarBtn = document.getElementById('edit-avatar-btn');
+  const avatarInput = document.getElementById('avatar-input');
+  editAvatarBtn.addEventListener('click', () => {
+    if(avatarInput.disabled) {
+      avatarInput.disabled = false;
+    } else {
+      avatarInput.disabled = true;
+    }
+  });
+  const editBioBtn = document.getElementById('edit-bio-btn');
+  const bioInput = document.getElementById('bio-input');
+  editBioBtn.addEventListener('click', () => {
+    if(bioInput.disabled) {
+      bioInput.disabled = false;
+    } else {
+      bioInput.disabled = true;
+    }
+  });
+</script>
 
 <img src="<%= user.avatar %>">
 <h3>Avatar Link</h3>
-<form action="/users/<%= user._id %>?_method=PUT" method="POST">
-  <input type="text" name="avatar">
-</form>
+<div id="avatar-input">
+  <form action="/users/<%= user._id %>?_method=PUT" method="POST" disabled>
+    <input id="avatar-input" type="text" name="avatar">
+    <button>Save</button>
+  </form>
+</div>
+<button id="edit-avatar-btn">Edit</button>
 <h1><%= user.name %></h1>
 <h3>Bio</h3>
 <p><%= user.bio %></p>
-<form action="/users/<%= user._id %>?_method=PUT" method="POST">
-  <textarea name="bio"></textarea>
-</form>
+<div id="bio-input">
+  <form action="/users/<%= user._id %>?_method=PUT" method="POST">
+    <textarea name="bio"></textarea>
+    <button>Save</button>
+  </form>
+</div>
+<button id="edit-bio-btn">Edit</button>
 <h3>Email</h3>
 <p><%= user.email %></p>
 
