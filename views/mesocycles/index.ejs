@@ -5,18 +5,11 @@
 <% for(let i = mesocycles.length - 1; i >= 0; i--) { %>
   <% const m = mesocycles[i] %>
   <label><%= i === mesocycles.length - 1 ? `Current Mesocycle: ${m.attribute}` : `Mesocycle: ${m.attribute}` %></label>
-  <form action="mesocycles/<%= m._id %>?_method=PUT" method="POST">
-    <label>Attribute</label>
-    <input type="text" name="attribute">
-    <label>Length (Weeks)</label>
-    <input type="number" min="1" name="length">
-    <input type="date" name="startDate">
-    <button>Update</button>
-  </form><br>
-  <a href="/mesocycles/<%= m._id %>">Details</a>
   <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
     <button>X</button>
-  </form><hr>
+  </form><br>
+  <a href="/mesocycles/<%= m._id %>">Details</a>
+  <hr>
 <% } %>
 
 <%- include('../partials/footer') %>

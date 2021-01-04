@@ -2,10 +2,18 @@
 
 <h1>Details</h1>
 <a href="/mesocycles">Back</a><hr>
-<h3>Training: <%= mesocycle.attribute %></h3>
+<h2>Training: <%= mesocycle.attribute %></h3>
 <ul>
   <li>Started on <%= mesocycle.startDate %></li>
   <li><%= mesocycle.length %> Weeks</li>
-</ul>
+</ul><hr>
+<h3>Update</h3>
+<form action="mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
+  <label>Attribute</label>
+  <input type="text" name="attribute" value="<%= mesocycle.attribute %>">
+  <label>Length (Weeks)</label>
+  <input type="number" min="1" name="length" value="<%= mesocycle.length %>">
+  <button>Update</button>
+</form>
 
 <%- include('../partials/footer') %>

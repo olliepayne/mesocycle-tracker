@@ -17,3 +17,9 @@ nav > ul {
 .nav-link {
   padding: 0 5px;
 }
+
+#avatar {
+  border: solid;
+  border-radius: 50%;
+  width: 100px;
+}

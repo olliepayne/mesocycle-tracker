@@ -3,6 +3,7 @@ const User = require('../models/user');
 module.exports = {
   index,
   show,
+  showEdit,
   update
 }
 
@@ -30,6 +31,16 @@ function show(req, res) {
   });
 }
 
-function update(req, res) {
+function showEdit(req, res) {
+  res.render('users/edit', {
+    title: 'Edit',
+    user: req.user
+  })
+}
 
+function update(req, res) {
+  User.findByIdAndUpdate(req.user._id, req.body)
+  .then(() => {
+    res.redirect(`/users/${req.user._id}`);
+  });
 }
