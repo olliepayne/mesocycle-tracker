@@ -3,7 +3,17 @@
 ### Getting Started
 Click Here to Open: https://intense-anchorage-67623.herokuapp.com/
 
-### Screenshots
+### Planning // Screenshots
+#### Trello
+- https://trello.com/b/wyFgnrej/unit-2-project
+
+#### Wireframe
+<img src="https://i.imgur.com/fJOviCM.png"
+     alt="Screnshot"
+     style="" />
+I strayed a lot from this initial wireframe due to many challenges which still managed to arise throughout this project.
+
+#### Screenshots
 <img src="https://i.imgur.com/5RFcKrH.png"
      alt="Screnshot"
      style="" />
