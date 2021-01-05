@@ -6,4 +6,4 @@ const sessionSchema = new Schema({
   sessionDate: Date
 })
 
-module.exports = mongoose.model(sessionSchema, 'Session')
+module.exports = mongoose.model('Session', sessionSchema)
