@@ -42,7 +42,7 @@ function create(req, res) {
 
 function show(req, res) {
   User.findById(req.user._id, (err, user) => {
-    Mesocycle.findById(req.params.id, (err, mesocycle) => {
+    Mesocycle.findById(req.params.mid, (err, mesocycle) => {
       res.render('mesocycles/show', {
         title: `Mesocycle ${mesocycle._id}`,
         user: req.user,
@@ -53,7 +53,7 @@ function show(req, res) {
 }
 
 function deleteOne(req, res) {
-  Mesocycle.findByIdAndDelete(req.params.id, (err, deletedMeso) => {
+  Mesocycle.findByIdAndDelete(req.params.mid, (err, deletedMeso) => {
     User.findById(req.user._id, (err, user) => {
       const deletedMesoIndex = user.mesocycles.indexOf(deletedMeso);
       user.mesocycles.splice(deletedMesoIndex, 1);
@@ -64,7 +64,7 @@ function deleteOne(req, res) {
 }
 
 function update(req, res) {
-  Mesocycle.findByIdAndUpdate(req.params.id, req.body)
+  Mesocycle.findByIdAndUpdate(req.params.mid, req.body)
   .then(() => {
     res.redirect('/mesocycles');
   });

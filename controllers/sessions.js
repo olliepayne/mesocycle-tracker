@@ -9,15 +9,15 @@ module.exports = {
 }
 
 function index(req, res) {
-  // Mesocycle.findById(req.params.mid)
-  // .populate('sessions')
-  // .exec((err, mesocycle) => {
-  //   res.render('sessions/index', {
-  //     title: 'Sessions',
-  //     user: req.user,
-  //     mesocycle
-  //   })
-  // })
+  Mesocycle.findById(req.params.mid)
+  .populate('sessions')
+  .exec((err, mesocycle) => {
+    res.render('sessions/index', {
+      title: 'Sessions',
+      user: req.user,
+      mesocycle
+    })
+  })
 }
 
 function show(req, res) {

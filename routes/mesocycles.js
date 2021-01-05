@@ -6,8 +6,8 @@ const mesocycleCtrl = require('../controllers/mesocycles');
 router.get('/', mesocycleCtrl.index);
 router.get('/new', mesocycleCtrl.new);
 router.post('/', mesocycleCtrl.create);
-router.get('/:id', mesocycleCtrl.show);
-router.delete('/:id', mesocycleCtrl.delete);
-router.put('/:id', mesocycleCtrl.update);
+router.get('/:mid', mesocycleCtrl.show);
+router.delete('/:mid', mesocycleCtrl.delete);
+router.put('/:mid', mesocycleCtrl.update);
 
 module.exports = router;
