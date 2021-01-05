@@ -5,3 +5,5 @@ const sessionCtrl = require('../controllers/sessions')
 
 router.get('/', sessionCtrl.index)
 router.get('/:id', sessionCtrl.show)
+
+module.exports = router
