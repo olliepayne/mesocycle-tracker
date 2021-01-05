@@ -50,7 +50,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/auth", authRouter);
 app.use('/mesocycles', mesocyclesRouter);
-app.use('/mesocycles/:mid/sessions', sessionsRouter)
+app.use('/', sessionsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

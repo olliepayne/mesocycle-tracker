@@ -3,9 +3,9 @@ const router = express.Router();
 
 const sessionCtrl = require('../controllers/sessions')
 
-router.get('/', sessionCtrl.index)
-router.get('/:sid', sessionCtrl.show)
-router.get('/', sessionCtrl.new)
-router.post('/', sessionCtrl.create)
+router.get('/mesocycles/:mid/sessions', sessionCtrl.index)
+router.get('/mesocycles/:mid/sessions/:sid', sessionCtrl.show)
+router.get('/mesocycles/:mid/sessions', sessionCtrl.new)
+router.post('/mesocycles/:mid/sessions', sessionCtrl.create)
 
 module.exports = router

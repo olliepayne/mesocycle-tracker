@@ -9,6 +9,7 @@ module.exports = {
 }
 
 function index(req, res) {
+  console.log(req.params)
   Mesocycle.findById(req.params.mid)
   .populate('sessions')
   .exec((err, mesocycle) => {
