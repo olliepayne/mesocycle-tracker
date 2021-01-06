@@ -54,7 +54,10 @@ function show(req, res) {
 }
 
 function update(req, res) {
-
+  Session.findByIdAndUpdate(req.params.sid, req.body)
+  .then(() => {
+    res.redirect('/mesocycles/${req.params.mid}/sessions');
+  })
 }
 
 function deleteOne(req, res) {
