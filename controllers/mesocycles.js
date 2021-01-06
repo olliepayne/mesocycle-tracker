@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Mesocycle = require('../models/mesocycle');
+const shorthandDate = require('../public/javascripts/shorthand-date')
 
 module.exports = {
   index,
@@ -30,7 +31,10 @@ function newOne(req, res) {
 }
 
 function create(req, res) {
-  Mesocycle.create(req.body, (err, newMesocycle) => { 
+  Mesocycle.create(req.body, (err, newMesocycle) => {
+    newMesocycle.dateStr = shorthandDate.convert(newMesocycle.startDate)
+    newMesocycle.save()
+    
     User.findById(req.user._id, (err, user) => {
       user.mesocycles.push(newMesocycle);
       user.save((err) => {
