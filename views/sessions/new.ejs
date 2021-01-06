@@ -2,5 +2,12 @@
 
 <h1>Add a Session</h1>
 <a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
+<form action="/mesocycles/<%= params.mid %>/sessions" method="POST">
+  <label>Description</label>
+  <input type="text" name="description" required>
+  <label>Date</label>
+  <input type="date" name="date" required>
+  <button>Save</button>
+</form>
 
 <%- include('../partials/footer') %>

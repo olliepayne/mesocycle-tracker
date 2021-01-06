@@ -3,9 +3,9 @@ const Session = require('../models/session')
 
 module.exports = {
   index,
-  show,
   new: newOne,
   create,
+  show,
   update,
   delete: deleteOne
 }
@@ -22,17 +22,6 @@ function index(req, res) {
   })
 }
 
-function show(req, res) {
-  Session.findById(req.params.sid, (err, session) => {
-    res.render('sessions/show', {
-      title: 'Details',
-      user: req.user,
-      params: req.params,
-      session
-    })
-  })
-}
-
 function newOne(req, res) {
   res.render('sessions/new', {
     title: 'New Session',
@@ -42,7 +31,26 @@ function newOne(req, res) {
 }
 
 function create(req, res) {
+  Session.create(req.body, (err, newSession) => {
+    console.log(newSession);
+    Mesocycle.findById(req.params.mid, (err, mesocycle) => {
+      mesocycle.sessions.push(newSession);
+      mesocycle.save();
 
+      res.redirect(`/mesocycles/${req.params.mid}/sessions`);
+    })
+  })
+}
+
+function show(req, res) {
+  Session.findById(req.params.sid, (err, session) => {
+    res.render('sessions/show', {
+      title: 'Details',
+      user: req.user,
+      params: req.params,
+      session
+    })
+  })
 }
 
 function update(req, res) {

@@ -5,7 +5,7 @@
 <a href="/mesocycles/<%= mesocycle._id %>/sessions/new">Add</a><hr>
 <% mesocycle.sessions.forEach((session) => { %>
   <h3>Session on <%= session.date %></h3>
-  <a href="/mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>">Details</a>
+  <a href="/mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>">Details</a><br>
 <% }) %>
 
 <%- include('../partials/footer') %>
