@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema({
   description: String,
-  date: Date
+  date: Date,
+  dateStr: String
 })
 
 module.exports = mongoose.model('Session', sessionSchema)

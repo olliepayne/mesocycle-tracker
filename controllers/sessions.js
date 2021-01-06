@@ -1,5 +1,6 @@
 const Mesocycle = require('../models/mesocycle')
 const Session = require('../models/session')
+const shorthandDate = require('../public/javascripts/shorthand-date')
 
 module.exports = {
   index,
@@ -32,7 +33,9 @@ function newOne(req, res) {
 
 function create(req, res) {
   Session.create(req.body, (err, newSession) => {
-    console.log(newSession);
+    newSession.dateStr = shorthandDate.convert(newSession.date)
+    newSession.save()
+
     Mesocycle.findById(req.params.mid, (err, mesocycle) => {
       mesocycle.sessions.push(newSession);
       mesocycle.save();
