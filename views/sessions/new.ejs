@@ -6,10 +6,14 @@
     <a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
   </div>
   <form action="/mesocycles/<%= params.mid %>/sessions" method="POST">
-    <label>Description</label>
-    <input type="text" name="description" required>
-    <label>Date</label>
+    <label>Description:</label>
+    <br>
+    <textarea class="session-description-input" type="text" name="description" required></textarea>
+    <br>
+    <label>Date:</label>
+    <br>
     <input type="date" name="date" required>
+    <br>
     <button class="save-button">Save</button>
   </form>
 </div>

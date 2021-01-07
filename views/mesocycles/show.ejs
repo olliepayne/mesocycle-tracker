@@ -6,19 +6,23 @@
     <a href="/mesocycles">Back</a><hr>
   </div>
   <div id="mesocycle-details">
-    <h2>Training: <%= mesocycle.attribute %></h3>
+    <h2>Training: <%= mesocycle.attribute %></h2>
       <ul>
-        <li>Started on <%= mesocycle.dateStr %></li>
-        <li>Ends on <%= mesocycle.endDateStr %> (<%= mesocycle.length %> Weeks)</li>
+        <li><span style="font-weight: bold;">Started</span> on <%= mesocycle.dateStr %></li>
+        <li><span style="font-weight: bold;">Ends</span> on <%= mesocycle.endDateStr %><span style="font-weight: bold;">(<%= mesocycle.length %> Weeks)</span></li>
         <a href="/mesocycles/<%= mesocycle._id %>/sessions">View Sessions</a>
       </ul>
   </div>
-  <h3>Update</h3>
-  <form action="/mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
-    <label>Attribute</label>
+  <h2>Update</h2>
+  <form id="mesocycle-update-form" action="/mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
+    <label>Attribute:</label>
+    <br>
     <input type="text" name="attribute" value="<%= mesocycle.attribute %>">
-    <label>Length (Weeks)</label>
+    <br>
+    <label>Length (Weeks):</label>
+    <br>
     <input type="number" min="1" name="length" value="<%= mesocycle.length %>">
+    <br>
     <button class="save-button">Save</button>
   </form>
 </div>
