@@ -34,14 +34,14 @@ function create(req, res) {
   Mesocycle.create(req.body, (err, newMesocycle) => {
     newMesocycle.dateStr = shorthandDate.convert(newMesocycle.startDate)
     newMesocycle.endDateStr = calculateEndDateStr(newMesocycle)
-    newMesocycle.save()
-    
-    User.findById(req.user._id, (err, user) => {
-      user.mesocycles.push(newMesocycle);
-      user.save((err) => {
-        res.redirect('/mesocycles');
+    newMesocycle.save((err, savedMesocycle) => {
+      User.findById(req.user._id, (err, user) => {
+        user.mesocycles.push(savedMesocycle);
+        user.save((err) => {
+          res.redirect('/mesocycles');
+        });
       });
-    });
+    })
   });
 }
 
@@ -73,9 +73,9 @@ function update(req, res) {
   .then(() => {
     Mesocycle.findById(req.params.mid, (err, mesocycle) => {
       mesocycle.endDateStr = calculateEndDateStr(mesocycle)
-      mesocycle.save()
-
-      res.redirect(`/mesocycles/${req.params.mid}`);
+      mesocycle.save((err) => {
+        res.redirect(`/mesocycles/${req.params.mid}`);
+      })
     })
   });
 }
@@ -83,7 +83,7 @@ function update(req, res) {
 // - - - Helper Functions - - -
 
 function calculateEndDateStr(mesocycle) {
-  let endDate = new Date()
+  let endDate = mesocycle.startDate
   endDate.setDate(mesocycle.startDate.getDate() + mesocycle.length * 7)
   return shorthandDate.convert(endDate)
 }

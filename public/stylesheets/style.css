@@ -4,8 +4,13 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+
+}
+
 header {
-  
+  display: flex;
+  flex-direction: row;
 }
 
 nav > ul {

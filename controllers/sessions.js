@@ -38,13 +38,13 @@ function newOne(req, res) {
 function create(req, res) {
   Session.create(req.body, (err, newSession) => {
     newSession.dateStr = shorthandDate.convert(newSession.date)
-    newSession.save()
-
-    Mesocycle.findById(req.params.mid, (err, mesocycle) => {
-      mesocycle.sessions.push(newSession);
-      mesocycle.save();
-
-      res.redirect(`/mesocycles/${req.params.mid}/sessions`);
+    newSession.save((err, savedSession) => {
+      Mesocycle.findById(req.params.mid, (err, mesocycle) => {
+        mesocycle.sessions.push(savedSession);
+        mesocycle.save((err) => {    
+          res.redirect(`/mesocycles/${req.params.mid}/sessions`);
+        });
+      })
     })
   })
 }
