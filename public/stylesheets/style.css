@@ -65,12 +65,30 @@ header {
   font-style: italic;
 }
 
+#go-button {
+  margin: 10px;
+  border-radius: 10%;
+  border: #d3f2e3;
+  background-color: #d3f2e3;
+  width: 70px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+#go-button:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
 .view a {
   color: #6b9685;
 }
 
 .view a:hover {
   opacity: 50%;
+  cursor: pointer;
 }
 
 .generic-page-nav {
@@ -79,18 +97,11 @@ header {
 
 .generic-page-nav a {
   font-size: 20px;
+  padding: 0 10px;
 }
 
 .generic-page-nav hr {
   width: 25%;
-}
-
-#user-show-page {
-  
-}
-
-#user-edit-page {
-  
 }
 
 .delete-button {
@@ -108,4 +119,33 @@ header {
 .delete-button:hover {
   opacity: 75%;
   cursor: pointer;
+}
+
+.save-button {
+  border-radius: 10%;
+  border: #e9e9e9;
+  background-color: #e9e9e9;
+  width: 70px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.save-button:hover {
+  opacity: 75%;
+  cursor: pointer;
+}
+
+#mesocycle-details ul {
+  list-style: none;
+}
+
+#sessions-show-page hr {
+  width: 25%;
+}
+
+#session-description-input {
+  text-align: justify;
+  width: 200px;
+  height: 150px;
 }

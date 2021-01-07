@@ -1,20 +1,26 @@
 <%- include('../partials/header') %>
 
-<h1>Details</h1>
-<a href="/mesocycles">Back</a><hr>
-<h2>Training: <%= mesocycle.attribute %></h3>
-<ul>
-  <li>Started on <%= mesocycle.dateStr %></li>
-  <li>Ends on <%= mesocycle.endDateStr %> (<%= mesocycle.length %> Weeks)</li>
-  <a href="/mesocycles/<%= mesocycle._id %>/sessions">View Sessions</a>
-</ul><hr>
-<h3>Update</h3>
-<form action="/mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
-  <label>Attribute</label>
-  <input type="text" name="attribute" value="<%= mesocycle.attribute %>">
-  <label>Length (Weeks)</label>
-  <input type="number" min="1" name="length" value="<%= mesocycle.length %>">
-  <button>Save</button>
-</form>
+<div class="view" id="mesocycle-show-page">
+  <div class="generic-page-nav">
+    <h1>Details</h1>
+    <a href="/mesocycles">Back</a><hr>
+  </div>
+  <div id="mesocycle-details">
+    <h2>Training: <%= mesocycle.attribute %></h3>
+      <ul>
+        <li>Started on <%= mesocycle.dateStr %></li>
+        <li>Ends on <%= mesocycle.endDateStr %> (<%= mesocycle.length %> Weeks)</li>
+        <a href="/mesocycles/<%= mesocycle._id %>/sessions">View Sessions</a>
+      </ul>
+  </div>
+  <h3>Update</h3>
+  <form action="/mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
+    <label>Attribute</label>
+    <input type="text" name="attribute" value="<%= mesocycle.attribute %>">
+    <label>Length (Weeks)</label>
+    <input type="number" min="1" name="length" value="<%= mesocycle.length %>">
+    <button class="save-button">Save</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

@@ -1,13 +1,17 @@
 <%- include('../partials/header') %>
 
-<h1>Add a <%= mesocycle.attribute %> Session</h1>
-<a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
-<form action="/mesocycles/<%= params.mid %>/sessions" method="POST">
-  <label>Description</label>
-  <input type="text" name="description" required>
-  <label>Date</label>
-  <input type="date" name="date" required>
-  <button>Save</button>
-</form>
+<div class="view" id="sessions-new-page">
+  <div class="generic-page-nav">
+    <h1>Add a <%= mesocycle.attribute %> Session</h1>
+    <a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
+  </div>
+  <form action="/mesocycles/<%= params.mid %>/sessions" method="POST">
+    <label>Description</label>
+    <input type="text" name="description" required>
+    <label>Date</label>
+    <input type="date" name="date" required>
+    <button class="save-button">Save</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

@@ -1,14 +1,18 @@
 <%- include('../partials/header.ejs') %>
 
-<h1>Add a Mesocycle</h1>
-<a href="/mesocycles">Back</a><hr>
-<form action="/mesocycles" method="POST">
-  <label>Attribute</label>
-  <input type="text" name="attribute" required>
-  <label>Length (Weeks)</label>
-  <input type="number" min="1" name="length" required>
-  <input type="date" name="startDate" required>
-  <button>Save</button>
-</form>
+<div class="view" id="mesocycle-new-page">
+  <div class="generic-page-nav">
+    <h1>Add a Mesocycle</h1>
+    <a href="/mesocycles">Back</a><hr>
+  </div>
+  <form action="/mesocycles" method="POST">
+    <label>Attribute</label>
+    <input type="text" name="attribute" required>
+    <label>Length (Weeks)</label>
+    <input type="number" min="1" name="length" required>
+    <input type="date" name="startDate" required>
+    <button class="save-button">Save</button>
+  </form>
+</div>
 
 <%- include('../partials/footer.ejs') %>

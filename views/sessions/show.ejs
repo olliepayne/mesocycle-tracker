@@ -1,14 +1,21 @@
 <%- include('../partials/header') %>
 
-<h1>Details</h1>
-<a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
-<form action="/mesocycles/<%= params.mid %>/sessions?_method=PUT" method="POST">
-  <h2>Description</h2>
-  <p><%= session.description %></p><hr>
-  <h3>Update</h3>
-  <label>Description</label>
-  <input type="text" name="description" value="<%= session.description %>">
-  <button>Save</button>
-</form>
+<div class="view" id="sessions-show-page">
+  <div class="generic-page-nav">
+    <h1>Details</h1>
+    <a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
+  </div>
+  <form action="/mesocycles/<%= params.mid %>/sessions?_method=PUT" method="POST">
+    <h2>Description</h2>
+    <p><%= session.description %></p>
+    <hr>
+    <h2>Update</h2>
+    <label>Description</label>
+    <br>
+    <textarea id="session-description-input" type="text" name="description"><%= session.description %></textarea>
+    <br>
+    <button class="save-button">Save</button>
+  </form>
+</div>
 
 <%- include('../partials/footer') %>
