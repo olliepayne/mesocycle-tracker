@@ -1,16 +1,18 @@
 <%- include('./partials/header.ejs') %>
 
-<h1>Mesocycle Tracker</h1>
-<h2>What are Mesocycles?</h2>
-<p>
-  Mesocycles are a way to periodize athletic training. They're generally 2 weeks or longer, and they are a subset of a 'Macrocycle'. A Macrocycle is made up of all of your Mesocycles.<br>
-  A Mesocycle will typically have a targeted attribute which the athlete is attempting to grow, for example: Strength, Hypertrophy, Power Endurance, etc...<br>
-  Within a Mesocycle, one week of training is considered to be a 'Microcycle'. The overall hiearchy is Macrocycle -> Mesocycle -> Microcycle.<br>
-  This concept of training periodzation was developed by the Soviet Union during the Cold War, in an effort to edge Russia's atheletes ahead of the competition.<br>
-  To this day, it is still an extremely viable form of training periodization.
-</p>
-<% if(user) { %>
-  <a href="/mesocycles">Mesocycles</a>
-<% } %>
+<div id="home-page">
+  <h1>Mesocycle Tracker</h1>
+  <h2>What are Mesocycles?</h2>
+  <p id="mesocycle-intro">
+    Mesocycles are a way to periodize athletic training. They're generally 2 weeks or longer, and they are a subset of a 'Macrocycle'. A Macrocycle is made up of all of your Mesocycles.<br>
+    A Mesocycle will typically have a targeted attribute which the athlete is attempting to grow, for example: Strength, Hypertrophy, Power Endurance, etc...<br>
+    Within a Mesocycle, one week of training is considered to be a 'Microcycle'. The overall hiearchy is Macrocycle -> Mesocycle -> Microcycle.<br>
+    This concept of training periodzation was developed by the Soviet Union during the Cold War, in an effort to edge Russia's atheletes ahead of the competition.<br>
+    To this day, it is still an extremely viable form of training periodization.
+  </p>
+  <% if(user) { %>
+    <a id="home-mesocycle-link" href="/mesocycles"><button type="button" class="btn btn-light">GO!</button></a>
+  <% } %>
+</div>
 
 <%- include('./partials/footer.ejs') %>
