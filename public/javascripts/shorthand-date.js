@@ -10,7 +10,7 @@ const weekdays = [
 
 function convert(date) {
   let day = weekdays[date.getDay()]
-  return `${day}, ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+  return `${day}, ${date.getMonth() + 1}/${date.getDate() + 1}/${date.getFullYear()}`
 }
 
 module.exports = {

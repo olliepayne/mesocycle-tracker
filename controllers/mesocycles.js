@@ -32,7 +32,7 @@ function newOne(req, res) {
 
 function create(req, res) {
   Mesocycle.create(req.body, (err, newMesocycle) => {
-    newMesocycle.dateStr = shorthandDate.convert(newMesocycle.startDate) 
+    newMesocycle.dateStr = shorthandDate.convert(newMesocycle.startDate)
     newMesocycle.endDateStr = calculateEndDateStr(newMesocycle)
     newMesocycle.save()
     
@@ -79,6 +79,8 @@ function update(req, res) {
     })
   });
 }
+
+// - - - Helper Functions - - -
 
 function calculateEndDateStr(mesocycle) {
   let endDate = new Date()
