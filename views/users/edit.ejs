@@ -1,17 +1,22 @@
 <%- include('../partials/header.ejs') %>
 
-<a href="/users/<%= user._id %>">Back</a><hr>
-<h1><%= user.name %></h1>
-<form action="/users/<%= user._id %>?_method=PUT" method="POST">
-  <img src="<%= user.avatar %>" id="avatar">
-  <h3>Avatar</h3>
-    <input type="text" name="avatar" value="<%= user.avatar %>">
-  <h3>Bio</h3>
-  <p><%= user.bio %></p>
-    <input type="text" name="bio" value="<%= user.bio %>">
-    <button>Save</button>
-</form>
-<h3>Email</h3>
-<p><%= user.email %></p>
+<div id="user-edit-page">
+  <div class="generic-page-nav">
+    <h1>Edit Profile</h1>
+    <a href="/users/<%= user._id %>">Back</a>
+  </div>
+  <h1><%= user.name %></h1>
+  <form action="/users/<%= user._id %>?_method=PUT" method="POST">
+    <img src="<%= user.avatar %>" id="avatar">
+    <h3>Avatar Link</h3>
+      <input type="text" name="avatar" value="<%= user.avatar %>">
+    <h3>Bio</h3>
+    <p><%= user.bio %></p>
+      <input type="text" name="bio" value="<%= user.bio %>">
+      <button>Save</button>
+  </form>
+  <h3>Email</h3>
+  <p><%= user.email %></p>
+</div>
 
 <%- include('../partials/footer.ejs') %>

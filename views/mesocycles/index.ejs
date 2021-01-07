@@ -1,18 +1,22 @@
 <%- include('../partials/header') %>
 
-<h1>Your Mesocycles</h1>
-<a href="/mesocycles/new">Add</a><hr>
-<% for(let i = mesocycles.length - 1; i >= 0; i--) { %>
-  <div class="mesocycle-index">
-    <% const m = mesocycles[i] %>
-    <h3><%= i === mesocycles.length - 1 ? `Current Mesocycle: ${m.attribute}` : `Mesocycle: ${m.attribute}` %></h3>
-    <p><%= m.dateStr %> - <%= m.endDateStr %></p>
-    <a href="/mesocycles/<%= m._id %>">Details</a>
-    <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
-      <button>X</button>
-    </form>
+<div class="view" id="mesocycle-index-page">
+  <div class="generic-page-nav">
+    <h1>Your Mesocycles</h1>
+    <a href="/mesocycles/new">Add</a><hr>
   </div>
-  <br>
-<% } %>
+  <% for(let i = mesocycles.length - 1; i >= 0; i--) { %>
+    <div class="mesocycle-index">
+      <% const m = mesocycles[i] %>
+      <h3><%= i === mesocycles.length - 1 ? `Current Mesocycle: ${m.attribute}` : `Mesocycle: ${m.attribute}` %></h3>
+      <p><%= m.dateStr %> - <%= m.endDateStr %></p>
+      <a href="/mesocycles/<%= m._id %>">Details</a>
+      <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
+        <button class="delete-button">Delete</button>
+      </form>
+    </div>
+    <br>
+  <% } %>
+</div>
 
 <%- include('../partials/footer') %>
