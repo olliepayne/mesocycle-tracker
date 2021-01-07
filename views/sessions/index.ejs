@@ -5,7 +5,10 @@
 <a href="/mesocycles/<%= mesocycle._id %>/sessions/new">Add</a><hr>
 <% mesocycle.sessions.forEach((session) => { %>
   <h3>Session on <%= session.dateStr %></h3>
-  <a href="/mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>">Details</a><br>
+  <a href="/mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>">Details</a>
+  <form action="mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>?_method=DELETE" method="POST">
+    <button>X</button>
+  </form><br>
 <% }) %>
 
 <%- include('../partials/footer') %>

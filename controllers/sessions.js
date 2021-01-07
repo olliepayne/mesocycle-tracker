@@ -59,10 +59,17 @@ function show(req, res) {
 function update(req, res) {
   Session.findByIdAndUpdate(req.params.sid, req.body)
   .then(() => {
-    res.redirect('/mesocycles/${req.params.mid}/sessions');
+    res.redirect(`/mesocycles/${req.params.mid}/sessions`);
   })
 }
 
 function deleteOne(req, res) {
+  Session.findByIdAndDelete(req.params.sid, (err, deletedSession) => {
+    Mesocycle.findById(req.params.mid, (err, mesocycle) => {
+      const deletedSessionIndex = mesocycle.sessions.indexOf(deletedSession);
+      mesocycle.sessions.splice(deletedSessionIndex, 1);
 
+      res.redirect(`/mesocycles/${req.params.mid}/sessions`);
+    })
+  });
 }

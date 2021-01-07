@@ -32,7 +32,8 @@ function newOne(req, res) {
 
 function create(req, res) {
   Mesocycle.create(req.body, (err, newMesocycle) => {
-    newMesocycle.dateStr = shorthandDate.convert(newMesocycle.startDate)
+    newMesocycle.dateStr = shorthandDate.convert(newMesocycle.startDate) 
+    newMesocycle.endDateStr = calculateEndDateStr(newMesocycle)
     newMesocycle.save()
     
     User.findById(req.user._id, (err, user) => {
@@ -62,7 +63,7 @@ function deleteOne(req, res) {
       const deletedMesoIndex = user.mesocycles.indexOf(deletedMeso);
       user.mesocycles.splice(deletedMesoIndex, 1);
 
-      res.redirect('/mesocycles');
+      res.redirect(`/mesocycles`);
     });
   });
 }
@@ -70,6 +71,17 @@ function deleteOne(req, res) {
 function update(req, res) {
   Mesocycle.findByIdAndUpdate(req.params.mid, req.body)
   .then(() => {
-    res.redirect(`/mesocycles/${req.params.mid}`);
+    Mesocycle.findById(req.params.mid, (err, mesocycle) => {
+      mesocycle.endDateStr = calculateEndDateStr(mesocycle)
+      mesocycle.save()
+
+      res.redirect(`/mesocycles/${req.params.mid}`);
+    })
   });
+}
+
+function calculateEndDateStr(mesocycle) {
+  let endDate = new Date()
+  endDate.setDate(mesocycle.startDate.getDate() + mesocycle.length * 7)
+  return shorthandDate.convert(endDate)
 }
