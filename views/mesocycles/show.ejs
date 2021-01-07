@@ -8,7 +8,7 @@
   <li>Ends on <%= mesocycle.endDateStr %> (<%= mesocycle.length %> Weeks)</li>
   <a href="/mesocycles/<%= mesocycle._id %>/sessions">View Sessions</a>
 </ul><hr>
-<h3>Update Length</h3>
+<h3>Update</h3>
 <form action="/mesocycles/<%= mesocycle._id %>?_method=PUT" method="POST">
   <label>Attribute</label>
   <input type="text" name="attribute" value="<%= mesocycle.attribute %>">

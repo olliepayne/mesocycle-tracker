@@ -3,13 +3,16 @@
 <h1>Your Mesocycles</h1>
 <a href="/mesocycles/new">Add</a><hr>
 <% for(let i = mesocycles.length - 1; i >= 0; i--) { %>
-  <% const m = mesocycles[i] %>
-  <h3><%= i === mesocycles.length - 1 ? `Current Mesocycle: ${m.attribute}` : `Mesocycle: ${m.attribute}` %></h3>
-  <p><%= m.dateStr %> - <%= m.endDateStr %></p>
-  <a href="/mesocycles/<%= m._id %>">Details</a>
-  <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
-    <button>X</button>
-  </form><br>
+  <div class="mesocycle-index">
+    <% const m = mesocycles[i] %>
+    <h3><%= i === mesocycles.length - 1 ? `Current Mesocycle: ${m.attribute}` : `Mesocycle: ${m.attribute}` %></h3>
+    <p><%= m.dateStr %> - <%= m.endDateStr %></p>
+    <a href="/mesocycles/<%= m._id %>">Details</a>
+    <form action="mesocycles/<%= m._id %>?_method=DELETE" method="POST">
+      <button>X</button>
+    </form>
+  </div>
+  <br>
 <% } %>
 
 <%- include('../partials/footer') %>
