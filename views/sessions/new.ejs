@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h1>Add a Session</h1>
+<h1>Add a <%= mesocycle.attribute %> Session</h1>
 <a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
 <form action="/mesocycles/<%= params.mid %>/sessions" method="POST">
   <label>Description</label>

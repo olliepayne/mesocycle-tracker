@@ -1,3 +1,4 @@
+const mesocycle = require('../models/mesocycle')
 const Mesocycle = require('../models/mesocycle')
 const Session = require('../models/session')
 const shorthandDate = require('../public/javascripts/shorthand-date')
@@ -24,10 +25,13 @@ function index(req, res) {
 }
 
 function newOne(req, res) {
-  res.render('sessions/new', {
-    title: 'New Session',
-    user: req.user,
-    params: req.params
+  Mesocycle.findById(req.params.mid, (err, mesocycle) => {
+    res.render('sessions/new', {
+      title: 'New Session',
+      user: req.user,
+      params: req.params,
+      mesocycle
+    })
   })
 }
 

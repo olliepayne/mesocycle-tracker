@@ -6,7 +6,7 @@
 <% mesocycle.sessions.forEach((session) => { %>
   <h3>Session on <%= session.dateStr %></h3>
   <a href="/mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>">Details</a>
-  <form action="mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>?_method=DELETE" method="POST">
+  <form action="/mesocycles/<%= mesocycle._id %>/sessions/<%= session._id %>?_method=DELETE" method="POST">
     <button>X</button>
   </form><br>
 <% }) %>
