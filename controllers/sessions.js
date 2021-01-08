@@ -1,4 +1,3 @@
-const mesocycle = require('../models/mesocycle')
 const Mesocycle = require('../models/mesocycle')
 const Session = require('../models/session')
 const shorthandDate = require('../public/javascripts/shorthand-date')
@@ -63,7 +62,7 @@ function show(req, res) {
 function update(req, res) {
   Session.findByIdAndUpdate(req.params.sid, req.body)
   .then(() => {
-    res.redirect(`/mesocycles/${req.params.mid}/sessions`);
+    res.redirect(`/mesocycles/${req.params.mid}/sessions/${req.params.sid}`);
   })
 }
 

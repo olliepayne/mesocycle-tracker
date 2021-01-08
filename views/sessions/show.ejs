@@ -5,7 +5,7 @@
     <h1>Details</h1>
     <a href="/mesocycles/<%= params.mid %>/sessions">Back</a><hr>
   </div>
-  <form action="/mesocycles/<%= params.mid %>/sessions?_method=PUT" method="POST">
+  <form action="/mesocycles/<%= params.mid %>/sessions/<%= session._id %>?_method=PUT" method="POST">
     <h2>Description</h2>
     <p><%= session.description %></p>
     <hr>
