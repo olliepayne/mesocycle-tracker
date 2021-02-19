@@ -1,35 +1,42 @@
 # unit-2-project
 
-### Getting Started
-Click Here to Open: https://quiet-thicket-74088.herokuapp.com/
+## [Deployment Link](https://quiet-thicket-74088.herokuapp.com/)
+<hr>
+**Known Bugs**
+<br>
+*none*
 
-### Planning // Screenshots
-#### Trello
-- https://trello.com/b/wyFgnrej/unit-2-project
+### Screenshots
+<img src="https://trello.com/b/wyFgnrej/unit-2-project" />
+Trello Board
 
-#### Wireframe
-<img src="https://i.imgur.com/fJOviCM.png"
-     alt="Screnshot"
-     style="" />
-I strayed a lot from this initial wireframe due to many challenges which still managed to arise throughout this project.
+<img src="https://i.imgur.com/fJOviCM.png" />
+Wireframe
 
 #### Screenshots
-<img src="https://i.imgur.com/5RFcKrH.png"
-     alt="Screnshot"
-     style="" />
-<img src="https://i.imgur.com/KoLJWAq.png"
-     alt="Screnshot"
-     style="" />
-<img src="https://i.imgur.com/AFeyo2F.png"
-     alt="Screnshot"
-     style="" />
+<img src="https://i.imgur.com/5RFcKrH.png" />
+App Image 1
+
+<img src="https://i.imgur.com/KoLJWAq.png" />
+App Image 2
+
+<img src="https://i.imgur.com/AFeyo2F.png" />
+App Image 3
 
 ### Technologies Used
-- Node
-- JavaScript
-- HTML
-- CSS
+* MongoDB
+* Express
+* Node
+* Google OAuth
+* JavaScript
+* HTML
+* CSS
 
-#### Next Steps // Challenges
-In the future I intend to completely stlye the app. The functionality ultimately meets what I wanted.
-This app was an absolute nightmare, I learned to never lack humility and kick my work ethic up a notch.
+### Favorites
+The general flow and funcionality of the app is smooth and correlates to an important aspect of my life, my sport climbing.
+
+### Growth
+Initially, this app was an absolute nightmare, I learned to never lack humility and kick my work ethic up a notch.
+
+#### Icebox
+In the future I intend to completely stlye the app.
