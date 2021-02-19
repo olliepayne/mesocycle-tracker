@@ -7,8 +7,7 @@
 *none*
 
 ### Screenshots
-<img src="https://trello.com/b/wyFgnrej/unit-2-project" />
-Trello Board
+[Trello Board](https://trello.com/b/wyFgnrej/unit-2-project)
 
 <img src="https://i.imgur.com/fJOviCM.png" />
 Wireframe
