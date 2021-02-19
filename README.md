@@ -13,14 +13,20 @@
 Wireframe
 
 #### Screenshots
-<img src="https://i.imgur.com/5RFcKrH.png" />
-App Image 1
+<img src="https://i.imgur.com/bUB59XW.png" />
+Your Mesocycles
 
-<img src="https://i.imgur.com/KoLJWAq.png" />
-App Image 2
+<img src="https://i.imgur.com/U6vaU1a.png" />
+Add a Session
 
-<img src="https://i.imgur.com/AFeyo2F.png" />
-App Image 3
+<img src="https://i.imgur.com/oQqHTMB.png" />
+All Mesocycle Sessions
+
+<img src="https://i.imgur.com/UuLpsWy.png" />
+Add a Mesocycle
+
+<img src="https://i.imgur.com/7n2pV4E.png" />
+Mesocycle Details
 
 ### Technologies Used
 * MongoDB
