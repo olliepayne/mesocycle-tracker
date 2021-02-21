@@ -1,4 +1,4 @@
-# unit-2-project
+# Mesocycle Tracker
 
 ## [Deployment Link](https://quiet-thicket-74088.herokuapp.com/)
 <hr>
